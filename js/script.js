@@ -28,7 +28,7 @@ const creaPokemones = (pokemon) => {
     contenedorImagen.classList.add('img-container');
 
     const fotoPokemon = document.createElement('img');
-    fotoPokemon.src = pokemon.sprites.front_default;
+    fotoPokemon.src = pokemon.sprites.other.dream_world.front_default;
 
     contenedorImagen.appendChild(fotoPokemon);
 
