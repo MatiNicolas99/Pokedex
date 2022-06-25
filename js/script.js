@@ -1,13 +1,10 @@
 let contenedor = document.querySelector('.contenedor');
 
-document.addEventListener('DOMContentLoaded', () => {
-    function fecthPokemones(numero) {
-        for(let n = 1; n <= numero; n++)
-        fetchDatos(n);
-    }
-fecthPokemones(20); 
-});
-
+/**
+ * Consultar al API de pokeapi.co por el pokemon según ID
+ * @param id Obtener hasta el ID del pokemon detallado
+ * @returns Devuelve cada uno de los arreglos por ID del pokemon ingresado
+ */
 
 const fetchDatos = async (id) => {
     try {
@@ -19,6 +16,11 @@ const fetchDatos = async (id) => {
         console.log(error);
     }
 };
+
+/**
+ * Muestra el Pokemon en una lista de elementos HTML
+ * @param {*} pokemon Datos del pokemon
+ */
 
 const creaPokemones = (pokemon) => {
     const card = document.createElement('div');
@@ -46,3 +48,15 @@ const creaPokemones = (pokemon) => {
     contenedor.appendChild(card);
 
 }
+
+/**
+ * Espera a que la ventana este cargada para iniciar la carga de pokemones, asegurar el orden y mostrar los pokemones
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+    function fecthPokemones(numero) {
+        for(let n = 1; n <= numero; n++)
+        fetchDatos(n);
+    }
+fecthPokemones(20); 
+});
