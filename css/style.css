@@ -37,12 +37,16 @@ body {
 
 .img-container img {
     padding: 2% 0 0 5%;
-    width: 300px;
-    height: 200px;
+    width: 250px;
+    height: 150px;
 }
 @media (min-width: 768px) {
     .contenedor {
         grid-template-columns: 1fr 1fr;
+    }
+    .img-container img {
+        width: 300px;
+        height: 200px;
     }
 }
 @media (min-width: 1200px) {
