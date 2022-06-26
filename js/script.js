@@ -8,8 +8,8 @@ let contenedor = document.querySelector('.contenedor');
 
 const fetchDatos = async (id) => {
     try {
-        const fetch_datos = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-        const data = await fetch_datos.json()
+        let fetch_datos = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+        let data = await fetch_datos.json()
         creaPokemones(data);
         console.log(data)
     } catch (error) {
@@ -54,9 +54,9 @@ const creaPokemones = (pokemon) => {
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    function fecthPokemones(numero) {
+    async function fecthPokemones(numero) {
         for(let n = 1; n <= numero; n++)
-        fetchDatos(n);
+       await fetchDatos(n);
     }
 fecthPokemones(20); 
 });
